@@ -1,3 +1,14 @@
+<?php include 'connect.php';?>
+<?php
+     $sql = "SELECT album_name FROM album_details";
+     if (mysqli_query($con, $sql)) {
+        echo '<script type="text/javascript">
+                 window.location = "/studio/upload_to_album.php"
+              </script>';
+     } else {
+        echo "Error: " . $sql . "" . mysqli_error($conn);
+     }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
