@@ -44,126 +44,19 @@
             <div class="common_panel panel_all" id="all_photos">
                 <div class="panel_blocks">
                 </div>
-                <div class="panel_blocks">
-                </div>
-                <div class="panel_blocks">
-                </div>
-                <div class="panel_blocks">
-                </div>
-                <div class="panel_blocks">
-                </div>
-                <div class="panel_blocks">
-                </div>
-                <div class="panel_blocks">
-                </div>
-                <div class="panel_blocks">
-                </div>
-                <div class="panel_blocks">
-                </div>
-                <div class="panel_blocks">
-                </div>
-                <div class="panel_blocks">
-                </div>
-                <div class="panel_blocks">
-                </div>
             </div>
             <div class="common_panel panel_selected" id="selected_photos">
                     <div class="panel_blocks">
-                        </div>
-                        <div class="panel_blocks">
-                        </div>
-                        <div class="panel_blocks">
-                        </div>
-                        <div class="panel_blocks">
-                        </div>
-                        <div class="panel_blocks">
-                        </div>
-                        <div class="panel_blocks">
-                        </div>
+                    </div>
+                    <div class="panel_blocks">
+                    </div>
             </div>
             <div class="common_panel panel_all" id="finished_photos">
                 <div class="panel_blocks">
                 </div>
-                <div class="panel_blocks">
-                </div>
-                <div class="panel_blocks">
-                </div>
-                <div class="panel_blocks">
-                </div>
-                <div class="panel_blocks">
-                </div>
-                <div class="panel_blocks">
-                </div>
-                <div class="panel_blocks">
-                </div>
-                <div class="panel_blocks">
-                </div>
-                <div class="panel_blocks">
-                </div>
-                <div class="panel_blocks">
-                </div>
-                <div class="panel_blocks">
-                </div>
-                <div class="panel_blocks">
-                </div>
             </div>
-        <div class="slider_popup">
-            <div class="slide_close"></div>
-            <div class="demo">
-                <ul id="lightSlider">
-                    <li data-thumb="images/blk_1.png">
-                        <img src="images/blk_1.png" />
-                        <!-- <input type="checkbox"> -->
-                        <div class="slide_btm">
-                            <section>
-                                <div class="check_slide">
-                                    <div class="check_slide_select"></div>
-                                </div>
-                                erwewe
-                            </section>
-                        </div>
-                    </li>
-                    <li data-thumb="images/blk_2.png">
-                        <img src="images/blk_2.png" />
-                        <!-- <input type="checkbox"> -->
-                        <div class="slide_btm">
-                            <section>
-                                <div class="check_slide">
-                                    <div class="check_slide_select"></div>
-                                </div>
-                                erwewe
-                            </section>
-                        </div>
-                    </li>
-                    <li data-thumb="images/blk_3.png">
-                        <img src="images/blk_3.png" />
-                        <!-- <input type="checkbox"> -->
-                        <div class="slide_btm">
-                            <section>
-                                <div class="check_slide">
-                                    <div class="check_slide_select"></div>
-                                </div>
-                                erwewe
-                            </section>
-                        </div>
-                    </li>
-                    <li data-thumb="images/blk_4.png">
-                        <img src="images/blk_4.png" />
-                        <!-- <input type="checkbox"> -->
-                        <div class="slide_btm">
-                            <section>
-                                <div class="check_slide">
-                                    <div class="check_slide_select"></div>
-                                </div>
-                                erwewe
-                            </section>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div> 
-    
+    </div>
+
 </div>
 
 
