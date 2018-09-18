@@ -1,0 +1,271 @@
+.outer
+{
+    padding-left:310px;
+    position: relative 
+}
+.left_panel
+{
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    background-color:#d8d8d8;
+    height: 100%;
+    width: 310px;
+    box-sizing: border-box;
+    padding-left: 140px;
+    padding-top: 100px;
+}
+.logo
+{
+    margin-bottom: 40px;
+}
+.pnel_tab section
+{
+    position: relative;
+    margin-top: 40px;
+    font-size: 16px;
+    color: #707070;
+    font-weight: bold;
+}
+.pnel_tab section:hover
+{
+    color: black;
+}
+.pnel_tab section:before
+{
+    height: 2px;
+    left: -69px;
+    background-color: black;
+    position: absolute;
+    content: '';
+    width: 0px;
+    top: 12px;
+    transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -webkit-transition: all ease 0.5s;
+}
+.pnel_tab section:hover:before
+{
+    width: 54px;
+    transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -webkit-transition: all ease 0.5s;
+}
+.pnel_tab section.active:before
+{
+    width: 54px;
+}
+.right_panel
+{
+    padding: 100px 50px;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding-bottom: 50px;
+}
+.panel_body
+{
+    height: calc(100% - 40px);
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.panel_selected
+{
+    display: none;
+}
+.panel_head section
+{
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 60px; 
+    cursor: pointer;
+    font-weight: bold;
+    position: relative;
+    margin-bottom: 60px;
+}
+.panel_head section:before
+{
+    width: 0%;
+    content: '';
+    position: absolute;
+    left: 0;
+    height: 2px;
+    bottom: -4px;
+    background-color: #f8981c;
+    transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -webkit-transition: all ease 0.5s;
+}
+.panel_head .active_tab:before
+{
+    width: 100%;
+    content: '';
+    position: absolute;
+    left: 0;
+    height: 2px;
+    bottom: -4px;
+    background-color: #f8981c;
+}
+.panel_head section:hover:before
+{
+    
+    width: 100%;
+    transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -webkit-transition: all ease 0.5s;
+}
+.panel_blocks
+{
+    width: 325px;
+    height: 250px;
+    display: inline-block;
+    vertical-align: top;
+    background-image: url(../images//blk_1.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 7px;
+    cursor: pointer;
+    margin: 0px 20px 20px 0px;
+    transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -webkit-transition: all ease 0.5s;
+    box-shadow: 3px 5px 20px 0px rgba(0, 0, 0, 0.33);
+}
+.panel_blocks:hover
+{
+    box-shadow: 3px 5px 20px 0px rgba(0, 0, 0, 0.68);
+    transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -webkit-transition: all ease 0.5s;
+}
+.slider_popup
+{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.91);
+    vertical-align: middle;
+    display: -webkit-flex;
+    -webkit-align-items: center;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    z-index: -10;
+}
+.slider_popup.active
+{
+    z-index: 10;
+    opacity: 1;
+}
+.demo {
+    width:780px;
+    display: inline-block;
+    margin: 0 auto;
+}
+ul {
+    list-style: none outside none;
+    padding-left: 0;
+    margin-bottom:0;
+}
+li {
+    display: block;
+    float: left;
+    margin-right: 6px;
+    cursor:pointer;
+}
+img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+#lightSlider li
+{
+    box-shadow: inset 0px 7px 31px 22px rgba(0, 0, 0, 0.26);
+    position:relative;
+}
+#lightSlider li img
+{
+    z-index: -2;
+    position: relative;
+}     
+#lightSlider li input
+{
+    position: absolute;
+    top: 0;
+    width: 22px;
+    height: 22px;
+    left: 20px;
+    top: 20px;
+    box-shadow: 0px 0px 20px 0px #0000007a;
+}
+.slide_close
+{
+    width: 30px;
+    height: 30px;
+    background-image: url(../images//close.png);
+    z-index: 10000000;
+    /* background-color: red; */
+    background-size: contain;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+.lSAction a
+{
+    background-image: url(../images/controls.png) !important;
+}
+.sub_pan_btn
+{
+    background-color: #f8981c;
+    color: white;
+    padding: 9px 27px;
+    border-radius: 27px;
+    cursor: pointer;
+}
+.slide_btm
+{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.48);
+    padding: 10px 20px;
+    color: white;
+    font-weight: bold;
+}
+.check_slide
+{
+    display: inline-block;
+    vertical-align: middle;
+    width: 17px;
+    height: 17px;
+    background-color: white;
+    margin-right: 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    position: relative;
+}
+.check_slide_select
+{
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    background-color: #797979;
+    left: 12%;
+    top: 12%;
+    display: none;
+}
+.active_ck .check_slide_select
+{
+    display: block;
+}
