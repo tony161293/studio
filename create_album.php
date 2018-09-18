@@ -26,8 +26,21 @@
                 $color_changer = "red";
                 $submitflag = false;
             }
-            $checksql = "SELECT user_id FROM album_details";
-
+            $checksql = "SELECT album_user FROM album_details";
+            while ($row=mysqli_fetch_row($result))
+                {
+                printf ("%s (%s)\n",$row[0],$row[1]);
+                }
+            $result = $con->query($checksql);
+             if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    if($row["album_user"] == $user_id){
+                        $error_notice = "The username already exists";
+                        $color_changer = "red";
+                        $submitflag = false;
+                    }
+                }
+            }
             if($submitflag){
                 $sql = "INSERT INTO album_details(album_name, album_date, album_location, album_type, album_user, album_password, is_sorted, is_finished) VALUES ('$name', '$albumtime', '$location', '$type', '$user_id', '$password', false, false)";
                 $redirect_url = "/studio/upload_to_album.php?albumname=".$name;
