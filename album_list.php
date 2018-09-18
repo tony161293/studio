@@ -6,6 +6,7 @@
                  window.location = "/studio/upload_to_album.php"
               </script>';
      } else {
+         
         echo "Error: " . $sql . "" . mysqli_error($conn);
      }
 ?>
