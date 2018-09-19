@@ -26,6 +26,12 @@ if(isset($_GET['albumname'])){
         }
     }
 }
+else{
+    $redirect_url = "/studio/album_list.php";
+    echo '<script type="text/javascript">
+            window.location = "'.$redirect_url.'"
+        </script>';
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
