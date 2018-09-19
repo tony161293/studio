@@ -49,7 +49,7 @@
     </div>
     <div class="right_panel">
         <div class="panel_head">
-            <section class="tab_nav active_tab" data-id="#all_photos">
+        <section class="tab_nav" data-id="#all_photos">
                 <a href="album_list.php" class="override_a">
                 Sorted
                 </a>
@@ -59,7 +59,7 @@
                     Pending
                 </a>
             </section>
-            <section class="tab_nav" data-id="#finished_photos">
+            <section class="tab_nav active_tab" data-id="#finished_photos">
                 <a href="album_list_finished.php" class="override_a">
                     Finished
                 </a>
@@ -68,18 +68,17 @@
             <div class="clear"></div>
         </div>
         <div class="panel_body">
-            <div class="common_panel panel_all" id="all_photos">
+            <div class="common_panel panel_all" id="finished_photos">
                 <?php
-                    $sql = "SELECT * FROM album_details WHERE is_sorted=true AND is_finished=false";
+                    $sql = "SELECT * FROM album_details WHERE is_finished=true";
                     $result = $con->query($sql);
                     if ($result->num_rows > 0) {
                         while($row = $result->fetch_assoc()) {
                             echo "<div class=\"panel_blocks\">" . $row["album_name"] . "</div>";                        
                         }
-                    } 
+                    }
                 ?>
             </div>
-            
     </div>
 
 </div>

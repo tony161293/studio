@@ -269,3 +269,7 @@ img {
 {
     display: block;
 }
+.override_a {
+    color: inherit;
+    text-decoration: inherit;
+}
