@@ -26,16 +26,17 @@
                 $color_changer = "red";
                 $submitflag = false;
             }
-            $checksql = "SELECT album_user FROM album_details";
-            while ($row=mysqli_fetch_row($result))
-                {
-                printf ("%s (%s)\n",$row[0],$row[1]);
-                }
+            $checksql = "SELECT album_user, album_name FROM album_details";
             $result = $con->query($checksql);
              if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
                     if($row["album_user"] == $user_id){
-                        $error_notice = "The username already exists";
+                        $error_notice = "The username already exists. Please use another one.";
+                        $color_changer = "red";
+                        $submitflag = false;
+                    }
+                    if($row["album_name"] == $name){
+                        $error_notice = "The album name already exists. Please use another one.";
                         $color_changer = "red";
                         $submitflag = false;
                     }

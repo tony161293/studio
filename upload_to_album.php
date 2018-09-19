@@ -1,22 +1,31 @@
+<?php include 'connect.php';?>
 <?php
-   if(isset($_FILES['image'])){
-      $errors= array();
-      $file_name = $_FILES['image']['name'];
-      $file_size =$_FILES['image']['size'];
-      $file_tmp =$_FILES['image']['tmp_name'];
-      $file_type=$_FILES['image']['type'];
-      $file_ext=strtolower(end(explode('.',$_FILES['image']['name'])));
-      
-      $expensions= array("jpeg","jpg","png");
-      
-      if(in_array($file_ext,$expensions)=== false){
-         $errors[]="extension not allowed, please choose a JPEG or PNG file.";
-      }
-      
-      if(empty($errors)==true){
-         move_uploaded_file($file_tmp,"uploads/".$file_name);
-      }
-   }
+if(isset($_GET['albumname'])){
+    $albumname = $_GET['albumname'];
+    $id = 0;
+    $checksql = "SELECT id FROM album_details WHERE album_name='".$albumname."'";
+    $result = $con->query($checksql);
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        echo $row;
+        $id = $row['id'];
+    }
+
+    if(isset($_FILES['image'])){
+        $errors= array();
+        $file_name = $_FILES['image']['name'];
+        $file_size =$_FILES['image']['size'];
+        $file_tmp =$_FILES['image']['tmp_name'];
+        $file_type=$_FILES['image']['type'];
+        move_uploaded_file($file_tmp,"uploads/".$file_name);
+        $sql = "INSERT INTO image_uploads(image_name, album_name, is_sorted, is_finished) VALUES ('$file_name', '$id', false, false)";
+        if (mysqli_query($con, $sql)) {
+            echo "Success";
+        } else {
+            echo "Error: " . $sql . "" . mysqli_error($conn);
+        }
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
