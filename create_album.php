@@ -2,7 +2,7 @@
 <?php
     $name = $albumtime = $location = $type = $user_id = "";
     $error_notice = "Album Details";
-    $color_changer = "black";
+    $color_changer = "";
     $submitflag = true;
     if(isset($_POST["album"])){
             $name = $_POST["name"];
