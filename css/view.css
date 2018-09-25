@@ -291,3 +291,11 @@ img {
     color: inherit;
     text-decoration: inherit;
 }
+.panel_all
+{
+    display: none;
+}
+#sort_photos
+{
+    display: block;
+}
