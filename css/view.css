@@ -129,6 +129,8 @@
     background-size: cover;
     background-position: center;
     border-radius: 7px;
+    position: relative;
+    overflow: hidden;
     cursor: pointer;
     margin: 0px 20px 20px 0px;
     transition: all ease 0.5s;
@@ -144,6 +146,22 @@
     -o-transition: all ease 0.5s;
     -moz-transition: all ease 0.5s;
     -webkit-transition: all ease 0.5s;
+}
+.panel_name
+{
+    position: absolute;
+    left: auto;
+    bottom: 0;
+    width: 100%;
+    background-color: #0000008a;
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+}
+.panel_name p{
+    margin: 0;
+    font-family: SegoeuiBold;
+    margin-bottom: 5px;
 }
 .slider_popup
 {
