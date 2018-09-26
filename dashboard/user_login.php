@@ -28,18 +28,18 @@
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta charset="UTF-8">
     <title>LightFinger</title>
-    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="css/main.css" rel="stylesheet" type="text/css">
-    <link href="css/view.css" rel="stylesheet" type="text/css">
-    <link href="css/datepicker.min.css" rel="stylesheet" type="text/css">
-    <link href="css/album.css" rel="stylesheet" type="text/css">
+    <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../css/main.css" rel="stylesheet" type="text/css">
+    <link href="../css/view.css" rel="stylesheet" type="text/css">
+    <link href="../css/datepicker.min.css" rel="stylesheet" type="text/css">
+    <link href="../css/album.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
     <div class="outer">
         <div class="left_panel">
             <div class="logo">
-                <img src="images/Logo.png">
+                <img src="../images/Logo.png">
             </div>
         </div>
         <div>
