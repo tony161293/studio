@@ -1,3 +1,8 @@
+<?php include 'connect.php';?>
+<?php
+    session_start();
+    $album_name = $_SESSION["album_name"];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,17 +10,17 @@
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta charset="UTF-8">
     <title>LightFinger</title>
-    <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="../css/main.css" rel="stylesheet" type="text/css">
-    <link href="../css/view.css" rel="stylesheet" type="text/css">
-    <link type="text/css" rel="stylesheet" href="../css/lightslider.min.css" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <link href="css/view.css" rel="stylesheet" type="text/css">
+    <link type="text/css" rel="stylesheet" href="css/lightslider.min.css" />
 </head>
 <body>
 
 <div class="outer">
    <div class="left_panel">
        <div class="logo">
-            <img src="../images/Logo.png">
+            <img src="images/Logo.png">
         </div>
        <!-- <div class="pnel_tab">
            <a href="view.html">
@@ -27,140 +32,19 @@
         </div> -->
     </div>
     <div class="right_panel">
-        <div class="panel_head">
-            <section class="tab_nav active_tab" data-id="#all_photos">
-                Sorted
-            </section>
-            <section class="tab_nav" data-id="#selected_photos">
-                Pending
-            </section>
-            <section class="tab_nav" data-id="#finished_photos">
-                Finished
-            </section>
-            <div class="sub_pan_btn right">New Album</div>
-            <div class="clear"></div>
-        </div>
         <div class="panel_body">
             <div class="common_panel panel_all" id="all_photos">
+            <?php 
+                    $sql = "SELECT * FROM image_uploads WHERE album_name='$album_name'";
+                    $result = $con->query($sql);
+                    if ($result->num_rows > 0) {
+                        while($row = $result->fetch_assoc()) {
+                            echo "<div class=\"panel_blocks\">" . $row["album_name"] . "</div>";
+                        }
+                    }
+                ?>
                 <div class="panel_blocks">
                 </div>
-                <div class="panel_blocks">
-                </div>
-                <div class="panel_blocks">
-                </div>
-                <div class="panel_blocks">
-                </div>
-                <div class="panel_blocks">
-                </div>
-                <div class="panel_blocks">
-                </div>
-                <div class="panel_blocks">
-                </div>
-                <div class="panel_blocks">
-                </div>
-                <div class="panel_blocks">
-                </div>
-                <div class="panel_blocks">
-                </div>
-                <div class="panel_blocks">
-                </div>
-                <div class="panel_blocks">
-                </div>
-            </div>
-            <div class="common_panel panel_selected" id="selected_photos">
-                    <div class="panel_blocks">
-                        </div>
-                        <div class="panel_blocks">
-                        </div>
-                        <div class="panel_blocks">
-                        </div>
-                        <div class="panel_blocks">
-                        </div>
-                        <div class="panel_blocks">
-                        </div>
-                        <div class="panel_blocks">
-                        </div>
-            </div>
-            <div class="common_panel panel_all" id="finished_photos">
-                <div class="panel_blocks">
-                </div>
-                <div class="panel_blocks">
-                </div>
-                <div class="panel_blocks">
-                </div>
-                <div class="panel_blocks">
-                </div>
-                <div class="panel_blocks">
-                </div>
-                <div class="panel_blocks">
-                </div>
-                <div class="panel_blocks">
-                </div>
-                <div class="panel_blocks">
-                </div>
-                <div class="panel_blocks">
-                </div>
-                <div class="panel_blocks">
-                </div>
-                <div class="panel_blocks">
-                </div>
-                <div class="panel_blocks">
-                </div>
-            </div>
-        <div class="slider_popup">
-            <div class="slide_close"></div>
-            <div class="demo">
-                <ul id="lightSlider">
-                    <li data-thumb="images/blk_1.png">
-                        <img src="images/blk_1.png" />
-                        <!-- <input type="checkbox"> -->
-                        <div class="slide_btm">
-                            <section>
-                                <div class="check_slide">
-                                    <div class="check_slide_select"></div>
-                                </div>
-                                erwewe
-                            </section>
-                        </div>
-                    </li>
-                    <li data-thumb="images/blk_2.png">
-                        <img src="images/blk_2.png" />
-                        <!-- <input type="checkbox"> -->
-                        <div class="slide_btm">
-                            <section>
-                                <div class="check_slide">
-                                    <div class="check_slide_select"></div>
-                                </div>
-                                erwewe
-                            </section>
-                        </div>
-                    </li>
-                    <li data-thumb="images/blk_3.png">
-                        <img src="images/blk_3.png" />
-                        <!-- <input type="checkbox"> -->
-                        <div class="slide_btm">
-                            <section>
-                                <div class="check_slide">
-                                    <div class="check_slide_select"></div>
-                                </div>
-                                erwewe
-                            </section>
-                        </div>
-                    </li>
-                    <li data-thumb="images/blk_4.png">
-                        <img src="images/blk_4.png" />
-                        <!-- <input type="checkbox"> -->
-                        <div class="slide_btm">
-                            <section>
-                                <div class="check_slide">
-                                    <div class="check_slide_select"></div>
-                                </div>
-                                erwewe
-                            </section>
-                        </div>
-                    </li>
-                </ul>
-            </div>
         </div>
     </div> 
     
