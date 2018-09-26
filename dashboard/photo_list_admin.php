@@ -2,7 +2,12 @@
 <?php
     session_start();
     if(isset($_GET['albumname'])){
-        $album_name = $_GET["album_name"];
+        $album_name = $_GET["albumname"];
+    } else {
+        $redirect_url = "/studio/dashboard/album_list.php";
+        echo '<script type="text/javascript">
+            window.location = "'.$redirect_url.'"
+        </script>';
     }
 ?>
 <!DOCTYPE html>
