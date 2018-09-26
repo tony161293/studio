@@ -10,6 +10,12 @@ if(isset($_GET['albumname'])){
         echo $row;
         $id = $row['id'];
     }
+    else{
+        $redirect_url = "/studio/dashboard/album_list.php";
+        echo '<script type="text/javascript">
+            window.location = "'.$redirect_url.'"
+        </script>';
+    }
 
     if(isset($_FILES['image'])){
         $errors= array();
@@ -27,7 +33,7 @@ if(isset($_GET['albumname'])){
     }
 }
 else{
-    $redirect_url = "/studio/album_list.php";
+    $redirect_url = "/studio/dashboard/album_list.php";
     echo '<script type="text/javascript">
             window.location = "'.$redirect_url.'"
         </script>';
