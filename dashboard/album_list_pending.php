@@ -26,17 +26,17 @@
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta charset="UTF-8">
     <title>LightFinger</title>
-    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="css/main.css" rel="stylesheet" type="text/css">
-    <link href="css/view.css" rel="stylesheet" type="text/css">
-    <link type="text/css" rel="stylesheet" href="css/lightslider.min.css" />
+    <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../css/main.css" rel="stylesheet" type="text/css">
+    <link href="../css/view.css" rel="stylesheet" type="text/css">
+    <link type="text/css" rel="stylesheet" href="../css/lightslider.min.css" />
 </head>
 <body>
 
 <div class="outer">
    <div class="left_panel">
        <div class="logo">
-            <img src="images/Logo.png">
+            <img src="../images/Logo.png">
         </div>
        <!-- <div class="pnel_tab">
            <a href="view.html">
@@ -49,17 +49,17 @@
     </div>
     <div class="right_panel">
         <div class="panel_head">
-        <section class="tab_nav" data-id="#all_photos">
+        <section class="tab_nav " data-id="#all_photos">
                 <a href="album_list.php" class="override_a">
                 Sorted
                 </a>
             </section>
-            <section class="tab_nav" data-id="#selected_photos">
+            <section class="tab_nav active_tab" data-id="#selected_photos">
                 <a href="album_list_pending.php" class="override_a">
                     Pending
                 </a>
             </section>
-            <section class="tab_nav active_tab" data-id="#finished_photos">
+            <section class="tab_nav" data-id="#finished_photos">
                 <a href="album_list_finished.php" class="override_a">
                     Finished
                 </a>
@@ -68,9 +68,9 @@
             <div class="clear"></div>
         </div>
         <div class="panel_body">
-            <div class="common_panel panel_all" id="finished_photos">
+            <div class="common_panel panel_all" id="selected_photos">
                 <?php
-                    $sql = "SELECT * FROM album_details WHERE is_finished=true";
+                    $sql = "SELECT * FROM album_details WHERE is_sorted=false AND is_finished=false";
                     $result = $con->query($sql);
                     if ($result->num_rows > 0) {
                         while($row = $result->fetch_assoc()) {
