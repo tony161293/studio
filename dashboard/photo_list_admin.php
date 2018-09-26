@@ -40,10 +40,10 @@
     </div>
     <div class="right_panel">
         <div class="panel_head">
-        <section class="tab_nav " data-id="#all_photos">
-            <?php 
-                echo "<h2>$album_name</h2>";
-            ?>
+            <section class="tab_nav " data-id="#all_photos">
+                <?php 
+                    echo "<h2>$album_name</h2>";
+                ?>
             </section>
         </div>
         <div class="panel_body">
