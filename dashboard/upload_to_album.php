@@ -10,6 +10,12 @@ if(isset($_GET['albumname'])){
         echo $row;
         $id = $row['id'];
     }
+    else{
+        $redirect_url = "/studio/dashboard/album_list.php";
+        echo '<script type="text/javascript">
+            window.location = "'.$redirect_url.'"
+        </script>';
+    }
 
     if(isset($_FILES['image'])){
         $errors= array();
@@ -27,7 +33,7 @@ if(isset($_GET['albumname'])){
     }
 }
 else{
-    $redirect_url = "/studio/album_list.php";
+    $redirect_url = "/studio/dashboard/album_list.php";
     echo '<script type="text/javascript">
             window.location = "'.$redirect_url.'"
         </script>';
@@ -41,18 +47,18 @@ else{
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta charset="UTF-8">
     <title>LightFinger</title>
-    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="css/main.css" rel="stylesheet" type="text/css">
-    <link href="css/view.css" rel="stylesheet" type="text/css">
-    <link href="css/datepicker.min.css" rel="stylesheet" type="text/css">
-    <link href="css/album.css" rel="stylesheet" type="text/css">
+    <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../css/main.css" rel="stylesheet" type="text/css">
+    <link href="../css/view.css" rel="stylesheet" type="text/css">
+    <link href="../css/datepicker.min.css" rel="stylesheet" type="text/css">
+    <link href="../css/album.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
     <div class="outer">
         <div class="left_panel">
             <div class="logo">
-                <img src="images/Logo.png">
+                <img src="../images/Logo.png">
             </div>
             <!-- <div class="pnel_tab">
            <a href="view.html">
