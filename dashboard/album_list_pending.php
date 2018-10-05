@@ -1,24 +1,4 @@
 <?php include 'connect.php';?>
-<?php
-    //  if ($nonSortedList->num_rows > 0) {
-    //     // output data of each row
-    //     while($row = $result->fetch_assoc()) {
-    //         echo "id: " . $row["album_name"]. " - Name: " . $row["album_type"]. " " . $row["id"]. "<br>";
-    //     }
-    // } else {
-    //     echo "0 results";
-    // }
-    // $con->close();
-    //  if (mysqli_query($con, $sql)) {
-    //      echo $sql;
-    //     // echo '<script type="text/javascript">
-    //     //          window.location = "/studio/upload_to_album.php"
-    //     //       </script>';
-    //  } else {
-
-    //     echo "Error: " . $sql . "" . mysqli_error($conn);
-    //  }
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,17 +44,26 @@
                     Finished
                 </a>
             </section>
-            <div class="sub_pan_btn right">New Album</div>
+            <a href="create_album.php"><div class="sub_pan_btn right">New Album</div></a>
             <div class="clear"></div>
         </div>
         <div class="panel_body">
-            <div class="common_panel panel_all" id="selected_photos">
+            <div class="common_panel" id="selected_photos">
                 <?php
                     $sql = "SELECT * FROM album_details WHERE is_sorted=false AND is_finished=false";
                     $result = $con->query($sql);
                     if ($result->num_rows > 0) {
                         while($row = $result->fetch_assoc()) {
-                            echo "<div class=\"panel_blocks\">" . $row["album_name"] . "</div>";                        
+                            echo '
+                            <a href="photo_list_admin.php?albumname='.$row["album_name"].'&status=pending">
+                                <div class="panel_blocks">
+                                    <div class="panel_name">
+                                        <p>'.$row["album_name"].'</p>
+                                        <section>'.$row["album_location"].'</section>
+                                    </div>
+                                </div>
+                            </a>
+                        ';
                         }
                     }
                 ?>

@@ -44,24 +44,31 @@
                     Finished
                 </a>
             </section>
-            <div class="sub_pan_btn right">New Album</div>
+            <a href="create_album.php"><div class="sub_pan_btn right">New Album</div></a>
             <div class="clear"></div>
         </div>
         <div class="panel_body">
-            <div class="common_panel panel_all" id="all_photos">
+            <div class="common_panel panel_all" id="sort_photos">
                 <?php
-$sql = "SELECT * FROM album_details WHERE is_sorted=true AND is_finished=false";
-$result = $con->query($sql);
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        echo "<div class=\"panel_blocks\">" . $row["album_name"] . "</div>";
-    }
-}
-?>
-            </div>
-
+                    $sql = "SELECT * FROM album_details WHERE is_sorted=true AND is_finished=false";
+                    $result = $con->query($sql);
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo '
+                            <a href="photo_list_admin.php?albumname='.$row["album_name"].'&status=sorted">
+                                <div class="panel_blocks">
+                                    <div class="panel_name">
+                                        <p>'.$row["album_name"].'</p>
+                                        <section>'.$row["album_location"].'</section>
+                                    </div>
+                                </div>
+                            </a>
+                        ';
+                        }
+                    }
+                ?>
+        </div>
     </div>
-
 </div>
 
 

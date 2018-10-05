@@ -1,22 +1,19 @@
 <?php include 'connect.php';?>
-<?php
+<?php   
+    $err = "Login";
     if(isset($_POST["login"])){
+        $err = "Login";
         $name = $_POST["username"];
-        echo $name;
         $password = $_POST["password"];
-        echo $password;
         $checksql = "SELECT 1 FROM user_detail WHERE user_name='$name' AND password='$password'";
         $result =$con->query($checksql);
         if ($result && $result->num_rows > 0) {
             echo '<script type="text/javascript">
-                            window.location = "create_album.php"
+                            window.location = "album_list.php"
                          </script>';
-                echo 'Username and Password Found'; 
         } else{
-            echo 'Username and Password NOT Found';
+            $err = "Username and Password NOT Found";
         }
-    } else {
-        echo "Database NOT Found.";
     }
 ?>
 
@@ -43,7 +40,7 @@
             </div>
         </div>
         <div>
-            LOgin
+            <?php echo $err; ?>
         </div>
         <form action="" method="POST" enctype="multipart/form-data">
             username <br>

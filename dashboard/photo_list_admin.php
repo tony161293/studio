@@ -3,6 +3,7 @@
     session_start();
     if(isset($_GET['albumname'])){
         $album_name = $_GET["albumname"];
+        $status = $_GET['status'];
     } else {
         $redirect_url = "/studio/dashboard/album_list.php";
         echo '<script type="text/javascript">
@@ -40,25 +41,36 @@
     </div>
     <div class="right_panel">
         <div class="panel_head">
-            <section class="tab_nav " data-id="#all_photos">
+            <section class="tab_nav active_tab" data-id="#all_photos">
                 <?php 
                     echo "<h2>$album_name</h2>";
                 ?>
             </section>
+            <a href="upload_to_album.php?albumname=<?php echo $album_name;?>">
+            <div class="sub_pan_btn right">Upload photos</div></a>
+            <?php
+            if($status == 'sorted')
+            {
+            ?>
+            <a href="create_finished_album.php?albumname=<?php echo $album_name;?>">
+            <div class="sub_pan_btn right">Work finished</div></a>
+            <?php
+            }
+            ?>
+            <a href="album_list_pending.php"><div class="sub_pan_btn right">Album list</div></a>
+            <div class="clear"></div>
         </div>
         <div class="panel_body">
-            <div class="common_panel panel_all" id="all_photos">
+            <div class="common_panel">
             <?php 
                     $sql = "SELECT * FROM image_uploads WHERE album_name='$album_name'";
                     $result = $con->query($sql);
                     if ($result->num_rows > 0) {
                         while($row = $result->fetch_assoc()) {
-                            echo "<div class=\"panel_blocks\">" . $row["album_name"] . "</div>";
+                            echo "<div class=\"panel_blocks\"><div class=\"panel_name\"><p>" . $row["image_name"] . "</p></div></div>";
                         }
                     }
                 ?>
-                <div class="panel_blocks">
-                </div>
         </div>
     </div> 
     

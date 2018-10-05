@@ -44,7 +44,7 @@
             }
             if($submitflag){
                 $sql = "INSERT INTO album_details(album_name, album_date, album_location, album_type, album_user, album_password, is_sorted, is_finished) VALUES ('$name', '$albumtime', '$location', '$type', '$user_id', '$password', false, false)";
-                $redirect_url = "/studio/upload_to_album.php?albumname=".$name;
+                $redirect_url = "upload_to_album.php?albumname=".$name;
                 if (mysqli_query($con, $sql)) {
                    echo '<script type="text/javascript">
                             window.location = "'.$redirect_url.'"
@@ -159,10 +159,10 @@
                 </div>
             </div>
         </div>
-        <script rel="script" src="js/jquery-1.8.2.min.js"></script>
-        <script rel="script" src="js/datepicker.min.js"></script>
-        <script rel="script" src="js/datepicker.en.js"></script>
-        <script rel="script" src="js/main.js"></script>
+        <script rel="script" src="../js/jquery-1.8.2.min.js"></script>
+        <script rel="script" src="../js/datepicker.min.js"></script>
+        <script rel="script" src="../js/datepicker.en.js"></script>
+        <script rel="script" src="../js/main.js"></script>
         <script>
         // Initialization
         $('#my-element').datepicker([options])
