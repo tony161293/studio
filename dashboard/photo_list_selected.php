@@ -26,7 +26,7 @@
            <a href="photo_list.php">
             <section class="active">All Photos</section>
            </a>
-           <a href="view_complete.html">
+           <a href="photo_list_completed.php">
             <section>Completed</section>
            </a>
         </div>

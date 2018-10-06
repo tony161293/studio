@@ -53,7 +53,7 @@
                         $sql = "SELECT * FROM finished_album WHERE album_name='$album_name'";
                         $result_finished = $con->query($sql);
                         if ($result_finished->num_rows > 0) {
-                            while($row = $result->fetch_assoc()) {
+                            while($row = $result_finished->fetch_assoc()) {
                                 echo "<div class=\"panel_blocks\">" . $row["album_name"] . "</div>";
                             }
                         }
