@@ -1,6 +1,7 @@
 <?php include 'connect.php';?>
 <?php
 $finished_status = false;
+$message = "Upload Photos";
 if(isset($_GET['albumname'])){
     $albumname = $_GET['albumname'];
     $checksql_finished = "SELECT id FROM finished_album WHERE album_name='".$albumname."'";
@@ -8,24 +9,30 @@ if(isset($_GET['albumname'])){
     if($result->num_rows > 0){
         $finished_status = true;
     }
-    if(isset($_FILES['image'])){
-        $errors= array();
-        $file_name = $_FILES['image']['name'];
-        $file_size =$_FILES['image']['size'];
-        $file_tmp =$_FILES['image']['tmp_name'];
-        $file_type=$_FILES['image']['type'];
-        move_uploaded_file($file_tmp,"uploads/".$file_name);
-        if($finished_status){
-            $sql = "INSERT INTO image_uploads(image_name, album_name, is_sorted, is_finished) VALUES ('$file_name', '$albumname', false, true)";
+    if(isset($_POST['submit'])){
+        if(count($_FILES['images']['name']) > 0){
+            for($i=0; $i<count($_FILES['images']['name']); $i++){
+                $tmpFilePath = $_FILES['images']['tmp_name'][$i];
+                if($tmpFilePath != ""){
+                    $file_name = $_FILES['images']['name'][$i];
+                    $filePath = "uploads/".$file_name;
+                    if(move_uploaded_file($tmpFilePath, $filePath)) {
+                        if($finished_status){
+                            $sql = "INSERT INTO image_uploads(image_name, album_name, is_sorted, is_finished) VALUES ('$file_name', '$albumname', false, true)";
+                        }
+                        else{
+                            $sql = "INSERT INTO image_uploads(image_name, album_name, is_sorted, is_finished) VALUES ('$file_name', '$albumname', false, false)";
+                        }
+                        if (mysqli_query($con, $sql)) {
+                            $message = "Upload complete";
+                        } else {
+                            $message = "Upload failed";
+                        }
+                    }
+                }
+            }
         }
-        else{
-            $sql = "INSERT INTO image_uploads(image_name, album_name, is_sorted, is_finished) VALUES ('$file_name', '$albumname', false, false)";
-        }
-        if (mysqli_query($con, $sql)) {
-            echo "Success";
-        } else {
-            echo "Error: " . $sql . "" . mysqli_error($conn);
-        }
+        
     }
 }
 else{
@@ -56,20 +63,12 @@ else{
             <div class="logo">
                 <img src="../images/Logo.png">
             </div>
-            <!-- <div class="pnel_tab">
-           <a href="view.html">
-            <section class="active">All Photos</section>
-           </a>
-           <a href="view_complete.html">
-            <section>Completed</section>
-           </a>
-        </div> -->
         </div>
         <div class="right_panel">
             <div class="panel_body">
                 <div class="panel_head">
                     <section class="tab_nav active_tab">
-                        Upload Photos
+                        <?php echo $message; ?>
                     </section>
                     <div class="clear"></div>
                 </div>
@@ -79,11 +78,11 @@ else{
                         <form action="" method="POST" enctype="multipart/form-data" name="album">
                             <div class="upload_block">
                                 <span>Drag files or Click to upload</span>
-                                <input type="file" name="image">
+                                <input type="file" name="images[]" multiple="multiple">
                             </div>
                     </div>
                     <section>
-                            <input type="submit" value="Upload" name="" class="can_sub_btn">
+                            <input type="submit" value="Upload" name="submit" class="can_sub_btn">
                         </form>
                     </section>
                 </div>
