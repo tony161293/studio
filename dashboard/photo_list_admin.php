@@ -62,25 +62,52 @@
         </div>
         <div class="panel_body">
             <div class="common_panel">
-            <?php 
-                    $sql = "SELECT * FROM image_uploads WHERE album_name='$album_name'";
-                    $result = $con->query($sql);
-                    if ($result->num_rows > 0) {
-                        while($row = $result->fetch_assoc()) {
-                            echo "<div class=\"panel_blocks\"><div class=\"panel_name\"><p>" . $row["image_name"] . "</p></div></div>";
+                <?php 
+                        $sql = "SELECT * FROM image_uploads WHERE album_name='$album_name'";
+                        $result = $con->query($sql);
+                        if ($result->num_rows > 0) {
+                            while($row = $result->fetch_assoc()) {
+                                echo "<div class=\"panel_blocks\"><div class=\"panel_name\"><p>" . $row["image_name"] . "</p></div></div>";
+                            }
                         }
-                    }
-                ?>
+                    ?>
+            </div>
+            <div class="slider_popup">
+                <div class="slide_close"></div>
+                <div class="demo">
+                    <ul id="lightSlider">
+                        <?php 
+                        $sql = "SELECT * FROM image_uploads WHERE album_name='$album_name'";
+                        $result = $con->query($sql);
+                        if ($result->num_rows > 0) {
+                            while($row = $result->fetch_assoc()) { ?>
+                        <li data-thumb="<?php echo 'uploads/'.$row['image_name'] ?>">
+                            <img src="<?php echo 'uploads/'.$row['image_name'] ?>" />
+                            <div class="slide_btm">
+                                <section>
+                                    <div class="check_slide">
+                                        <div class="check_slide_select"></div>
+                                    </div>
+                                    1007852.jpg
+                                </section>
+                            </div>
+                        </li>
+                            <?php 
+                            }
+                        }
+                        ?>
+                    </ul>
+                </div>
         </div>
     </div> 
     
 </div>
 
 
-<script rel="script" src="js/jquery-1.8.2.min.js"></script>
-<script rel="script" src="js/main.js"></script>
-<script rel="script" src="js/view.js"></script>
-<script src="js/lightslider.min.js"></script>
+<script rel="script" src="../js/jquery-1.8.2.min.js"></script>
+<script rel="script" src="../js/main.js"></script>
+<script rel="script" src="../js/view.js"></script>
+<script src="../js/lightslider.min.js"></script>
 
 <script type="text/javascript">
     $('#lightSlider').lightSlider({
