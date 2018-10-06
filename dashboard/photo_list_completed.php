@@ -47,11 +47,15 @@
         <div class="panel_body">
             <div class="common_panel panel_all" id="all_photos">
                 <?php 
-                    $sql = "SELECT * FROM image_uploads WHERE album_name='$album_name'";
+                    $sql = "SELECT * FROM image_uploads WHERE album_name='$album_name'AND is_finished=true";
                     $result = $con->query($sql);
                     if ($result->num_rows > 0) {
-                        while($row = $result->fetch_assoc()) {
-                            echo "<div class=\"panel_blocks\">" . $row["album_name"] . "</div>";
+                        $sql = "SELECT * FROM finished_album WHERE album_name='$album_name'";
+                        $result_finished = $con->query($sql);
+                        if ($result_finished->num_rows > 0) {
+                            while($row = $result->fetch_assoc()) {
+                                echo "<div class=\"panel_blocks\">" . $row["album_name"] . "</div>";
+                            }
                         }
                     }
                 ?>

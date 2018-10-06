@@ -47,7 +47,7 @@
         <div class="panel_body">
             <div class="common_panel panel_all" id="all_photos">
                 <?php 
-                    $sql = "SELECT * FROM image_uploads WHERE album_name='$album_name'";
+                    $sql = "SELECT * FROM image_uploads WHERE album_name='$album_name'AND is_sorted=true";
                     $result = $con->query($sql);
                     if ($result->num_rows > 0) {
                         while($row = $result->fetch_assoc()) {
