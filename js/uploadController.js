@@ -9,14 +9,16 @@ $(document).ready(function(){
             $.each(this.files, function(index, value){
                 size += value.size/1000000;
                 namearray += $('#uploadImage').val().split('\\').pop() + ",";
+                console.log(size);
                 }
             );
+            $('#uploadMessage').html(namearray);
             if(size>30){
+                console.log('size greater than 30');
                 $('#uploadImage').val("");
                 size = 0;
                 $('#uploadMessage').html('The selected files are too big in size. Please select separately or upload a smaller size.');
             } 
-            $('#uploadMessage').html(namearray);
         }
     });
 });

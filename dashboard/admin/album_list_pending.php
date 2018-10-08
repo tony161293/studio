@@ -73,10 +73,10 @@
 </div>
 
 
-<script rel="script" src="../js/jquery-1.8.2.min.js"></script>
-<script rel="script" src="../js/main.js"></script>
-<script rel="script" src="../js/view.js"></script>
-<script src="../js/lightslider.min.js"></script>
+<script rel="script" src="../../js/jquery-1.8.2.min.js"></script>
+<script rel="script" src="../../js/main.js"></script>
+<script rel="script" src="../../js/view.js"></script>
+<script src="../../js/lightslider.min.js"></script>
 
 <script type="text/javascript">
     $('#lightSlider').lightSlider({
