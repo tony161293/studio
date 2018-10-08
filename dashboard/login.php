@@ -1,6 +1,6 @@
+<?php session_start(); ?>
 <?php include 'connect.php';?>
-<?php   
-    session_start();
+<?php
     $err = "Login";
     if ($_SESSION["admin_logged_status"] === true) {
         echo '<script type="text/javascript">
@@ -16,8 +16,8 @@
             if ($result && $result->num_rows > 0) {
                 $_SESSION["admin_logged_status"] = true;
                 echo '<script type="text/javascript">
-                                window.location = "album_list.php"
-                             </script>';
+                        window.location = "album_list.php"
+                        </script>';
             } else{
                 $err = "Username and Password NOT Found";
             }

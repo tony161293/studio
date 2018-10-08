@@ -1,7 +1,8 @@
+<?php session_start(); ?>
 <?php include 'connect.php';?>
 <?php 
     session_start();
-    if ($_SESSION["admin_logged_status"] != true) {
+    if (!isset($_SESSION["admin_logged_status"])) {
         echo '<script type="text/javascript">
                 window.location = "login.php"
             </script>';
@@ -80,10 +81,10 @@
 </div>
 
 
-<script rel="script" src="js/jquery-1.8.2.min.js"></script>
-<script rel="script" src="js/main.js"></script>
-<script rel="script" src="js/view.js"></script>
-<script src="js/lightslider.min.js"></script>
+<script rel="script" src="../js/jquery-1.8.2.min.js"></script>
+<script rel="script" src="../js/main.js"></script>
+<script rel="script" src="../js/view.js"></script>
+<script src="../js/lightslider.min.js"></script>
 
 <script type="text/javascript">
     $('#lightSlider').lightSlider({
