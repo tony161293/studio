@@ -37,7 +37,7 @@
                     echo "<h2>$album_name</h2>";
                 ?>
             </section>
-            <a href="upload_to_album.php?albumname=<?php echo $album_name;?>">
+            <a href="upload_to_album.php?albumname=<?php echo $album_name.'&status='.$status; ?>">
             <div class="sub_pan_btn right">Upload photos</div></a>
             <?php
             if($status == 'sorted')
