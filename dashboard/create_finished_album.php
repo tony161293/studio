@@ -19,10 +19,17 @@ if(isset($_GET)){
             $user_id = $row['album_user'];
             $sql = "INSERT INTO finished_album(album_name, album_date, album_location, album_type, album_user) VALUES ('$finished_albumname', '$albumtime', '$location', '$type', '$user_id')";
             if (mysqli_query($con, $sql)) {
-                $redirect_url = "album_list_finished.php";
-                echo '<script type="text/javascript">
-                    window.location = "'.$redirect_url.'"
-                </script>';
+                $albumedit = "UPDATE album_details SET is_sorted=false, is_finished=true WHERE album_name='$albumname'";
+                if(mysqli_query($con, $albumedit)){
+                    $redirect_url = "album_list_finished.php";
+                    echo '<script type="text/javascript">
+                        window.location = "'.$redirect_url.'"
+                    </script>';
+                }
+                else {
+                    echo "Error: " . $albumedit . "" . mysqli_error($conn);
+                }
+                
             } else {
                 echo "Error: " . $sql . "" . mysqli_error($conn);
             }

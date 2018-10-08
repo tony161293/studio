@@ -17,7 +17,6 @@ if(isset($_GET['albumname'])){
     }
     if(isset($_POST['submit'])){
         if(count($_FILES['images']['name']) > 0){
-            echo "multilple files";
             for($i=0; $i<count($_FILES['images']['name']); $i++){
                 $tmpFilePath = $_FILES['images']['tmp_name'][$i];
                 if($tmpFilePath != ""){
@@ -38,8 +37,7 @@ if(isset($_GET['albumname'])){
                     }
                 }
             }
-        }
-        
+        }        
     }
 }
 else{
@@ -84,18 +82,19 @@ else{
                         <p>Album Name</p>
                         <form action="" method="POST" enctype="multipart/form-data" name="album">
                             <div class="upload_block">
-                                <span>Drag files or Click to upload</span>
-                                <input type="file" name="images[]" multiple="multiple">
+                                <span id="uploadMessage">Click to upload files</span>
+                                <input type="file" id="uploadImage" name="images[]" multiple="multiple">
                             </div>
                     </div>
                     <section>
-                            <input type="submit" value="Upload" name="submit" class="can_sub_btn">
+                            <input type="submit" id="uploadButton" value="Upload" name="submit" class="can_sub_btn">
                         </form>
                     </section>
                 </div>
             </div>
         </div>
         <script rel="script" src="../js/jquery-1.8.2.min.js"></script>
+        <script rel="script" src="../js/uploadController.js"></script>
         <script rel="script" src="../js/main.js"></script>
 </body>
 
