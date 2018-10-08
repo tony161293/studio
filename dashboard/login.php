@@ -1,18 +1,29 @@
 <?php include 'connect.php';?>
 <?php   
+    session_start();
     $err = "Login";
-    if(isset($_POST["login"])){
-        $err = "Login";
-        $name = $_POST["username"];
-        $password = $_POST["password"];
-        $checksql = "SELECT 1 FROM user_detail WHERE user_name='$name' AND password='$password'";
-        $result =$con->query($checksql);
-        if ($result && $result->num_rows > 0) {
-            echo '<script type="text/javascript">
-                            window.location = "album_list.php"
-                         </script>';
-        } else{
-            $err = "Username and Password NOT Found";
+    if ($_SESSION["admin_logged_status"] === true) {
+        echo "condition";
+        echo '<script type="text/javascript">
+                window.location = "album_list.php"
+            </script>';
+    } else {
+        $_SESSION["admin_logged_status"] = false;
+        echo "else";
+        if(isset($_POST["login"])){
+            $err = "Login";
+            $name = $_POST["username"];
+            $password = $_POST["password"];
+            $checksql = "SELECT 1 FROM user_detail WHERE user_name='$name' AND password='$password'";
+            $result =$con->query($checksql);
+            if ($result && $result->num_rows > 0) {
+                $_SESSION["admin_logged_status"] = true;
+                echo '<script type="text/javascript">
+                                window.location = "album_list.php"
+                             </script>';
+            } else{
+                $err = "Username and Password NOT Found";
+            }
         }
     }
 ?>

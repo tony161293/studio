@@ -1,4 +1,14 @@
 <?php include 'connect.php';?>
+<?php 
+    session_start();
+    echo "admin status".$_SESSION["admin_logged_status"];
+    if ($_SESSION["admin_logged_status"] !== true) {
+        echo '<script type="text/javascript">
+        window.location = "login.php"
+    </script>';
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

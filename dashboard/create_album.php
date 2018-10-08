@@ -4,6 +4,12 @@
     $error_notice = "Album Details";
     $color_changer = "";
     $submitflag = true;
+    session_start();
+    if ($_SESSION["admin_logged_status"] != true) {
+        echo '<script type="text/javascript">
+                window.location = "login.php"
+            </script>';
+    }
     if(isset($_POST["album"])){
             $name = $_POST["name"];
             $albumtime = $_POST["date"];

@@ -1,5 +1,11 @@
 <?php include 'connect.php';?>
 <?php
+session_start();
+if ($_SESSION["admin_logged_status"] != true) {
+    echo '<script type="text/javascript">
+            window.location = "login.php"
+        </script>';
+}
 if(isset($_GET)){
     $albumname = $_GET['albumname'];
     $fetchsql = "SELECT * FROM album_details WHERE album_name='$albumname'";

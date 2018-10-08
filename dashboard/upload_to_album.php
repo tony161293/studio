@@ -2,6 +2,12 @@
 <?php
 $finished_status = false;
 $message = "Upload Photos";
+session_start();
+if ($_SESSION["admin_logged_status"] != true) {
+    echo '<script type="text/javascript">
+            window.location = "login.php"
+        </script>';
+}
 if(isset($_GET['albumname'])){
     $albumname = $_GET['albumname'];
     $checksql_finished = "SELECT id FROM finished_album WHERE album_name='".$albumname."'";
