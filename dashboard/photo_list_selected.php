@@ -29,6 +29,9 @@
            <a href="photo_list_completed.php">
             <section>Completed</section>
            </a>
+           <a href="logout.php">
+                <section>Logout</section>
+            </a>
         </div>
     </div>
     <div class="right_panel">

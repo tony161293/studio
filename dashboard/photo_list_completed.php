@@ -30,7 +30,10 @@
                     All Photos
                 </section>
             </a>
-                <section class="active">Completed</section>
+            <section class="active">Completed</section>
+            <a href="logout.php">
+                <section>Logout</section>
+            </a>
             </div>
         </div>
         <div class="right_panel">

@@ -1,22 +1,30 @@
 <?php include 'connect.php';?>
 <?php
     session_start();
-    if(isset($_POST["login"])){
-        $name = $_POST["username"];
-        $password = $_POST["password"];
-        $checksql = "SELECT * FROM album_details WHERE album_user='$name' AND album_password='$password'";
-        $result =$con->query($checksql);
-        if ($result && $result->num_rows > 0) {
-            $row = $result->fetch_assoc();
-            $_SESSION["album_name"] = $row["album_name"];
-            $_SESSION["album_user"] = $row["album_user"];
-        
-            echo '<script type="text/javascript">
-                            window.location = "photo_list.php"
-                         </script>';
-        } else{
+    if ($_SESSION["user_logged_status"] === true) {
+        echo '<script type="text/javascript">
+                window.location = "photo_list.php"
+            </script>';
+    } else {
+        if(isset($_POST["login"])){
+            $name = $_POST["username"];
+            $password = $_POST["password"];
+            $checksql = "SELECT * FROM album_details WHERE album_user='$name' AND album_password='$password'";
+            $result =$con->query($checksql);
+            if ($result && $result->num_rows > 0) {
+                $row = $result->fetch_assoc();
+                $_SESSION["album_name"] = $row["album_name"];
+                $_SESSION["album_user"] = $row["album_user"];
+                $_SESSION["user_logged_status"] = true;
+            
+                echo '<script type="text/javascript">
+                                window.location = "photo_list.php"
+                            </script>';
+            } else{
+            }
         }
     }
+    
 ?>
 
 <!DOCTYPE html>
