@@ -13,9 +13,7 @@
             echo '<script type="text/javascript">
                             window.location = "photo_list.php"
                          </script>';
-                echo 'Username and Password Found'; 
         } else{
-            echo 'Username and Password NOT Found';
         }
     }
 ?>

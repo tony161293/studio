@@ -24,20 +24,11 @@
     <link type="text/css" rel="stylesheet" href="../css/lightslider.min.css" />
 </head>
 <body>
-
 <div class="outer">
    <div class="left_panel">
        <div class="logo">
             <img src="../images/Logo.png">
         </div>
-       <!-- <div class="pnel_tab">
-           <a href="view.html">
-            <section class="active">All Photos</section>
-           </a>
-           <a href="view_complete.html">
-            <section>Completed</section>
-           </a>
-        </div> -->
     </div>
     <div class="right_panel">
         <div class="panel_head">
