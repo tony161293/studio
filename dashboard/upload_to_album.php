@@ -21,7 +21,7 @@ if(isset($_GET['albumname'])){
             for($i=0; $i<count($_FILES['images']['name']); $i++){
                 $tmpFilePath = $_FILES['images']['tmp_name'][$i];
                 if($tmpFilePath != ""){
-                    $file_name = $_FILES['images']['name'][$i];
+                    $file_name = date("ymdhms").$_FILES['images']['name'][$i];
                     $filePath = "uploads/".$file_name;
                     if(move_uploaded_file($tmpFilePath, $filePath)) {
                         if($finished_status){
