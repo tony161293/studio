@@ -5,7 +5,7 @@ $(document).ready(function(){
         if(this.files.length>0){
             $.each(this.files, function(index, value){
                 size += value.size/1024;
-                namearray += value.name;
+                namearray += value[index].name;
                 }
             );
         }

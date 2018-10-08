@@ -3,13 +3,10 @@
     session_start();
     $err = "Login";
     if ($_SESSION["admin_logged_status"] === true) {
-        echo "condition";
         echo '<script type="text/javascript">
                 window.location = "album_list.php"
             </script>';
     } else {
-        $_SESSION["admin_logged_status"] = false;
-        echo "else";
         if(isset($_POST["login"])){
             $err = "Login";
             $name = $_POST["username"];
