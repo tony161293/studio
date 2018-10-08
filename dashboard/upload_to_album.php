@@ -88,8 +88,8 @@ else{
                 </div>
             </div>
         </div>
-        <script rel="script" src="js/jquery-1.8.2.min.js"></script>
-        <script rel="script" src="js/main.js"></script>
+        <script rel="script" src="../js/jquery-1.8.2.min.js"></script>
+        <script rel="script" src="../js/main.js"></script>
 </body>
 
 </html>
