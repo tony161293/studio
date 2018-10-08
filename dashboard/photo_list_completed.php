@@ -1,6 +1,11 @@
 <?php include 'connect.php';?>
 <?php
     session_start();
+    if ($_SESSION["user_logged_status"] != true) {
+        echo '<script type="text/javascript">
+                window.location = "login.php"
+            </script>';
+    }
     $album_name = $_SESSION["album_name"];
     $album_user = $_SESSION["album_user"];
     echo "$album_user";
