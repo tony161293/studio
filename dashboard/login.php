@@ -11,7 +11,7 @@
             $err = "Login";
             $name = $_POST["username"];
             $password = $_POST["password"];
-            $checksql = "SELECT 1 FROM user_detail WHERE user_name='$name' AND password='$password'";
+            $checksql = "SELECT * FROM user_detail WHERE user_name='$name' AND password='$password'";
             $result =$con->query($checksql);
             if ($result && $result->num_rows > 0) {
                 $_SESSION["admin_logged_status"] = true;
