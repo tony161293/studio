@@ -11,6 +11,7 @@ if(isset($_GET['albumname'])){
     }
     if(isset($_POST['submit'])){
         if(count($_FILES['images']['name']) > 0){
+            echo "multilple files";
             for($i=0; $i<count($_FILES['images']['name']); $i++){
                 $tmpFilePath = $_FILES['images']['tmp_name'][$i];
                 if($tmpFilePath != ""){
