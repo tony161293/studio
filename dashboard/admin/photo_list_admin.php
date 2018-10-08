@@ -23,16 +23,16 @@
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta charset="UTF-8">
     <title>LightFinger</title>
-    <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="../css/main.css" rel="stylesheet" type="text/css">
-    <link href="../css/view.css" rel="stylesheet" type="text/css">
-    <link type="text/css" rel="stylesheet" href="../css/lightslider.min.css" />
+    <link href="../../css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../../css/main.css" rel="stylesheet" type="text/css">
+    <link href="../../css/view.css" rel="stylesheet" type="text/css">
+    <link type="text/css" rel="stylesheet" href="../../css/lightslider.min.css" />
 </head>
 <body>
 <div class="outer">
    <div class="left_panel">
        <div class="logo">
-            <img src="../images/Logo.png">
+            <img src="../../images/Logo.png">
         </div>
     </div>
     <div class="right_panel">
@@ -77,14 +77,14 @@
                         $result = $con->query($sql);
                         if ($result->num_rows > 0) {
                             while($row = $result->fetch_assoc()) { ?>
-                        <li data-thumb="<?php echo 'uploads/'.$row['image_name'] ?>">
-                            <img src="<?php echo 'uploads/'.$row['image_name'] ?>" />
+                        <li data-thumb="<?php echo '../uploads/'.$row['image_name'] ?>">
+                            <img src="<?php echo '../uploads/'.$row['image_name'] ?>" />
                             <div class="slide_btm">
                                 <section>
                                     <div class="check_slide">
                                         <div class="check_slide_select"></div>
                                     </div>
-                                    1007852.jpg
+                                    <?php echo '../uploads/'.$row['image_name'] ?>
                                 </section>
                             </div>
                         </li>
@@ -100,10 +100,10 @@
 </div>
 
 
-<script rel="script" src="../js/jquery-1.8.2.min.js"></script>
-<script rel="script" src="../js/main.js"></script>
-<script rel="script" src="../js/view.js"></script>
-<script src="../js/lightslider.min.js"></script>
+<script rel="script" src="../../js/jquery-1.8.2.min.js"></script>
+<script rel="script" src="../../js/main.js"></script>
+<script rel="script" src="../../js/view.js"></script>
+<script src="../../js/lightslider.min.js"></script>
 
 <script type="text/javascript">
     $('#lightSlider').lightSlider({

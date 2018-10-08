@@ -70,27 +70,19 @@
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta charset="UTF-8">
     <title>LightFinger</title>
-    <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="../css/main.css" rel="stylesheet" type="text/css">
-    <link href="../css/view.css" rel="stylesheet" type="text/css">
-    <link href="../css/datepicker.min.css" rel="stylesheet" type="text/css">
-    <link href="../css/album.css" rel="stylesheet" type="text/css">
+    <link href="../../css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../../css/main.css" rel="stylesheet" type="text/css">
+    <link href="../../css/view.css" rel="stylesheet" type="text/css">
+    <link href="../../css/datepicker.min.css" rel="stylesheet" type="text/css">
+    <link href="../../css/album.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
     <div class="outer">
         <div class="left_panel">
             <div class="logo">
-                <img src="../images/Logo.png">
+                <img src="../../images/Logo.png">
             </div>
-            <!-- <div class="pnel_tab">
-       <a href="view.html">
-        <section class="active">All Photos</section>
-       </a>
-       <a href="view_complete.html">
-        <section>Completed</section>
-       </a>
-    </div> -->
         </div>
         <div class="right_panel">
             <div class="panel_body">
@@ -104,7 +96,7 @@
                     <div class="album_wrap">
                         <p style="color:<?php echo $color_changer; ?>"><?php echo $error_notice; ?></p>
                         <div class="row">
-                            <form action="create_album.php" method="POST" enctype="multipart/form-data">
+                            <form action="" method="POST" enctype="multipart/form-data">
                                 <div class="row_block left">
                                     <div class="block_span">
                                         Name
@@ -165,10 +157,10 @@
                 </div>
             </div>
         </div>
-        <script rel="script" src="../js/jquery-1.8.2.min.js"></script>
-        <script rel="script" src="../js/datepicker.min.js"></script>
-        <script rel="script" src="../js/datepicker.en.js"></script>
-        <script rel="script" src="../js/main.js"></script>
+        <script rel="script" src="../../js/jquery-1.8.2.min.js"></script>
+        <script rel="script" src="../../js/datepicker.min.js"></script>
+        <script rel="script" src="../../js/datepicker.en.js"></script>
+        <script rel="script" src="../../js/main.js"></script>
         <script>
         // Initialization
         $('#my-element').datepicker([options])
