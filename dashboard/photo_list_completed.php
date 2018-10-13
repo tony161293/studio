@@ -69,6 +69,9 @@
                         }
                     ?>
                 </div>
+
+<!--                D:\xampp\htdocs\FL\LightFinger\lf_git\studio\dashboard-->
+
                 <div class="slider_popup">
                     <div class="slide_close"></div>
                     <div class="demo">
