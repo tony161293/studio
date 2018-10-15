@@ -8,7 +8,7 @@
     } else {
         if(isset($_POST["login"])){
             $name = $_POST["username"];
-            $password = $_POST["password"];
+            $password = hash('sha512', $_POST["password"]);
             $checksql = "SELECT * FROM album_details WHERE album_user='$name' AND album_password='$password'";
             $result =$con->query($checksql);
             if ($result && $result->num_rows > 0) {
