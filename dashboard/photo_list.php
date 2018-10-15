@@ -49,7 +49,9 @@
                     Selected
                 </a>
             </section>
+            <div class="sub_pan_btn right">Sorting complete</div>
             <div class="sub_pan_btn right">Submit Selected Photos</div>
+            <div class="sub_pan_btn right slideshow">Slideshow</div>
             <div class="clear"></div>
         </div>
         <div class="panel_body">
@@ -59,11 +61,12 @@
                     $result = $con->query($sql);
                     if ($result->num_rows > 0) {
                         while($row = $result->fetch_assoc()) {
-                            echo '<div class="panel_blocks">
+                            echo '<div class="panel_blocks_duplicate">
                             <img src="uploads/'.$row["image_name"].' "alt="img_err">
                             <div class="panel_name">
-                                <p>'.$row["image_name"].'</p>
+                                <p class="image_name">'.$row["image_name"].'</p>
                             </div>
+                            <div class="if_selected"></div>
                         </div>';
                         }
                     }
@@ -99,6 +102,7 @@
 
 
 <script rel="script" src="../js/jquery-1.8.2.min.js"></script>
+<script rel="script" src="../js/photoSelection.js"></script>
 <script rel="script" src="../js/main.js"></script>
 <script rel="script" src="../js/view.js"></script>
 <script src="../js/lightslider.min.js"></script>

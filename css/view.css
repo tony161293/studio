@@ -145,6 +145,14 @@
     object-fit: cover;
     height: 100%;
 }
+.panel_blocks:hover
+{
+    box-shadow: 3px 5px 20px 0px rgba(0, 0, 0, 0.68);
+    transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -webkit-transition: all ease 0.5s;
+}
 .if_selected
 {
     background-image: url(.././images/select.png);
@@ -156,14 +164,6 @@
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-}
-.panel_blocks:hover
-{
-    box-shadow: 3px 5px 20px 0px rgba(0, 0, 0, 0.68);
-    transition: all ease 0.5s;
-    -o-transition: all ease 0.5s;
-    -moz-transition: all ease 0.5s;
-    -webkit-transition: all ease 0.5s;
 }
 .panel_name
 {
@@ -317,4 +317,41 @@ img {
 #sort_photos
 {
     display: block;
+}
+
+/* Created by tony to override the panel blocks for the end user */
+
+.panel_blocks_duplicate
+{
+    width: 325px;
+    height: 250px;
+    display: inline-block;
+    vertical-align: top;
+    /*background-image: url(../images//blk_1.png);*/
+    /*background-size: cover;*/
+    /*background-position: center;*/
+    border-radius: 7px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    margin: 0px 20px 20px 0px;
+    transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -webkit-transition: all ease 0.5s;
+    box-shadow: 3px 5px 20px 0px rgba(0, 0, 0, 0.33);
+}
+.panel_blocks_duplicate img
+{
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+.panel_blocks_duplicate:hover
+{
+    box-shadow: 3px 5px 20px 0px rgba(0, 0, 0, 0.68);
+    transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -webkit-transition: all ease 0.5s;
 }

@@ -24,6 +24,7 @@ function check_toggle()
 function init() {
     $('.tab_nav').click(panel_select);
     $('.panel_blocks').click(active_popup);
+    $('.slideshow').click(active_popup);
     $('.slide_close').click(close_popup);
     $('.check_slide').click(check_toggle);
 }
