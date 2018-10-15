@@ -61,6 +61,7 @@
                     if ($result->num_rows > 0) {
                         while($row = $result->fetch_assoc()) {
                             echo '<div class="panel_blocks">
+                            <img src="uploads/'.$row["image_name"].' "alt="img_err">
                             <div class="panel_name">
                                 <p>'.$row["image_name"].'</p>
                             </div>
