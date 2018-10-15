@@ -49,15 +49,15 @@
                     Selected
                 </a>
             </section>
-            <div class="sub_pan_btn right">Sorting complete</div>
-            <div class="sub_pan_btn right">Submit Selected Photos</div>
+            <div class="sub_pan_btn right">Sorting Complete</div>
+            <div class="sub_pan_btn right" id="submit_images">Submit Selected Photos</div>
             <div class="sub_pan_btn right slideshow">Slideshow</div>
             <div class="clear"></div>
         </div>
         <div class="panel_body">
             <div class="common_panel " id="all_photos">
                 <?php 
-                    $sql = "SELECT * FROM image_uploads WHERE album_name='$album_name'";
+                    $sql = "SELECT * FROM image_uploads WHERE album_name='$album_name' AND is_sorted=false";
                     $result = $con->query($sql);
                     if ($result->num_rows > 0) {
                         while($row = $result->fetch_assoc()) {

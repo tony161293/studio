@@ -27,11 +27,11 @@ if(isset($_GET)){
                     </script>';
                 }
                 else {
-                    echo "Error: " . $albumedit . "" . mysqli_error($conn);
+                    echo "Error: " . $albumedit . "" . mysqli_error($con);
                 }
                 
             } else {
-                echo "Error: " . $sql . "" . mysqli_error($conn);
+                echo "Error: " . $sql . "" . mysqli_error($con);
             }
         }
     }

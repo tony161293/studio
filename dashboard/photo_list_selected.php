@@ -50,7 +50,7 @@
                     Selected
                 
             </section>
-            <div class="sub_pan_btn right">Submit Selected Photos</div>
+            <div class="sub_pan_btn right">Sorting Complete</div>
             <div class="clear"></div>
         </div>
         <div class="panel_body">
